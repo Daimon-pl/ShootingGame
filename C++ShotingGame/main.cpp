@@ -49,7 +49,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	while ((ProcessMessage() == 0) && (sceneMng->Update() != nullptr)) {
 
 		ClearDrawScreen();		// ‰æ–Ê‚Ì‰Šú‰»
-		PAD_INPUT::UpdateKey();
+		//PAD_INPUT::UpdateKey();
 		sceneMng->Draw();
 
 		//‹­§I—¹
