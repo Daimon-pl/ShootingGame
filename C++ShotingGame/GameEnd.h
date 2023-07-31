@@ -1,7 +1,7 @@
 #pragma once
-#include "AbstractScene.h"
+#include "AbstractScene.h"]
 
-class Ranking : public AbstractScene
+class GameEnd : public AbstractScene
 {
 private:
 
@@ -9,10 +9,10 @@ public:
 	int Cr = (0xffffff);
 
 	//コンストラクタ
-	Ranking();
+	GameEnd();
 
 	//デストラクタ
-	~Ranking() final;
+	~GameEnd();
 
 	//描画以外の更新を実行
 	AbstractScene* Update() override;

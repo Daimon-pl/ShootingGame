@@ -1,7 +1,7 @@
 #pragma once
 #include "AbstractScene.h"
 
-class Ranking : public AbstractScene
+class Help : public AbstractScene
 {
 private:
 
@@ -9,16 +9,18 @@ public:
 	int Cr = (0xffffff);
 
 	//コンストラクタ
-	Ranking();
+	Help();
+
 
 	//デストラクタ
-	~Ranking() final;
+	~Help() final;
+
 
 	//描画以外の更新を実行
 	AbstractScene* Update() override;
 
+
 	//描画に関することを実装
 	void Draw() const override;
-
 };
 

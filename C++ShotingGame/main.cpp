@@ -2,6 +2,7 @@
 #include "AbstractScene.h"
 #include "SceneManager.h"
 #include "Title.h"
+#include "PadInput.h"
 
 
 #define FRAMERATE 60.0 //フレームレート
@@ -49,7 +50,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	while ((ProcessMessage() == 0) && (sceneMng->Update() != nullptr)) {
 
 		ClearDrawScreen();		// 画面の初期化
-		//PAD_INPUT::UpdateKey();
+		PAD_INPUT::UpdateKey();
 		sceneMng->Draw();
 
 		//強制終了
