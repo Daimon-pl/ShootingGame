@@ -6,8 +6,9 @@ class Title :
 {
 private:
     int title;
+    int cursor;
 public:
-
+    int Cr = (0xffffff);
     //コンストラクタ
     Title();
 
