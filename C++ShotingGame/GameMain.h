@@ -3,6 +3,12 @@
 class GameMain : public AbstractScene
 {
 private:
+	int cimage;
+	int cursor_y;
+	int titlecursor;
+
+	int cursor_num;
+	int interval;
 
 public:
 	int Cr = (0xffffff);

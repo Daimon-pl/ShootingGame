@@ -10,7 +10,7 @@
 
 Title::Title()
 {
-	title = LoadGraph("images/Title/title.png");
+	title = LoadGraph("images/Title/title3.png");
 	titlecursor = LoadGraph("images/Title/Target.png");
 
 	cursor_num = 0;
@@ -79,10 +79,13 @@ AbstractScene* Title::Update()
 void Title::Draw()const
 {
 	DrawGraph(0, 0, title, TRUE);
-	DrawGraph(TITLEMODESELECT_X - 50, TITLEMODESELECT_Y - 20 + cursor_y, titlecursor, TRUE);
-	DrawString(620, 196, "PLAY", Cr);
-	DrawString(620, 290, "RANKING", Cr);
-	DrawString(620, 383, "HELP", Cr);
-	DrawString(620, 480, "END", Cr);
+	DrawGraph(TITLEMODESELECT_X - 70, TITLEMODESELECT_Y - 20 + cursor_y, titlecursor, TRUE);
 	SetFontSize(50);
+	DrawString(580, 196, "PLAY", Cr);
+	DrawString(580, 290, "RANKING", Cr);
+	DrawString(580, 383, "HELP", Cr);
+	DrawString(580, 480, "END", Cr);
+	SetFontSize(20);
+	DrawString(1080, 650, "Aボタンで決定", Cr);
+	DrawString(1080, 690, "Bボタンで戻る", Cr);
 }
