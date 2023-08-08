@@ -18,6 +18,7 @@ private:
     int cursor_y;
     int cursor_num;
     int interval;
+
 public:
     int Cr = (0xffffff);
     //コンストラクタ

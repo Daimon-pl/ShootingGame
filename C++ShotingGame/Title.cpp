@@ -3,7 +3,6 @@
 #include "PadInput.h"
 #include "GameMain.h"
 #include "Ranking.h"
-#include "GameEnd.h"
 #include "Help.h"
 
 #include <math.h>
@@ -32,33 +31,46 @@ AbstractScene* Title::Update()
 		interval++;
 	}
 
-	if ((PAD_INPUT::GetLStick().ThumbY > MARGIN) && interval >= 70) {
+
+	if ((PAD_INPUT::GetLStick().ThumbY > MARGIN || CheckHitKey(KEY_INPUT_W)) && interval >= 70) {
 		cursor_num--;
 		interval = 0;
 	}
-	else if ((PAD_INPUT::GetLStick().ThumbY < -MARGIN) && interval >= 70) {
+	else if ((PAD_INPUT::GetLStick().ThumbY < -MARGIN || CheckHitKey(KEY_INPUT_S)) && interval >= 70) {
 		cursor_num++;
 		interval = 0;
+	}
+
+	if (PAD_INPUT::OnButton(XINPUT_BUTTON_DPAD_DOWN))
+	{
+		if (cursor_num < 4)++cursor_num;
+		else --cursor_num = 0;
+	}
+	else if (PAD_INPUT::OnButton(XINPUT_BUTTON_DPAD_UP))
+	{
+		if (cursor_num > 0)--cursor_num;
+		else ++cursor_num = 4;
 	}
 
 	if (cursor_num < 0)cursor_num = 3;
 	if (cursor_num > 3)cursor_num = 0;
 
-	if (cursor_num == 0 && PAD_INPUT::OnButton(XINPUT_BUTTON_A))
-	{
-		return new GameMain();
-	}
-	else if (cursor_num == 1 && PAD_INPUT::OnButton(XINPUT_BUTTON_A))
-	{
-		return new Ranking();
-	}
-	else if (cursor_num == 2 && PAD_INPUT::OnButton(XINPUT_BUTTON_A))
-	{
-		return new Help();
-	}
-	else if (cursor_num == 3 && PAD_INPUT::OnButton(XINPUT_BUTTON_A))
-	{
-		return new GameEnd();
+	if (PAD_INPUT::OnButton(XINPUT_BUTTON_A)) {
+
+		//ステージセレクト画面に行く
+		if (cursor_num == 0)
+		{
+			return new GameMain();
+		}
+		if (cursor_num == 1) {
+			return new Ranking();
+		}
+		if (cursor_num == 2) {
+			return new Help();
+		}
+		if (cursor_num == 3) {
+			return nullptr;
+		}
 	}
 
 	return this;

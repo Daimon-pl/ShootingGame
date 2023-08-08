@@ -58,7 +58,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		{
 			break;
 		}
-
+		if (PAD_INPUT::OnButton(XINPUT_BUTTON_BACK))
+		{
+			break;
+		}
 		ScreenFlip();			// — ‰æ–Ê‚Ì“à—e‚ð•\‰æ–Ê‚É”½‰f
 
 	}

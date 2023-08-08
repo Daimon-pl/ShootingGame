@@ -15,6 +15,11 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
+	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
+
+		return new Title();
+	}
+
 	return this;
 }
 
