@@ -20,13 +20,14 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
-
-
 	//Bボタンでタイトルに戻る
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
 
 		return new Title();
 	}
+
+
+
 
 	return this;
 }
