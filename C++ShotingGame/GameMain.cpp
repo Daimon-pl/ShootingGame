@@ -13,6 +13,11 @@ GameMain::GameMain()
 	interval = 0;
 }
 
+void GameMain::InputKey()
+{
+	
+}
+
 GameMain::~GameMain()
 {
 	DeleteGraph(cimage);
@@ -26,8 +31,18 @@ AbstractScene* GameMain::Update()
 		return new Title();
 	}
 
+	MoveBall();
+	InputKey();
+	ChangeAngle();
 
-
+	//XVˆ—
+	if (KeyFlg & PAD_INPUT_M)
+	{
+		if (MenuNumber == 0)
+		{
+			return new GameMain();
+		}
+	}
 
 	return this;
 }
