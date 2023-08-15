@@ -10,14 +10,8 @@ private:
 	int cursor_num;
 	int interval;
 
-	void ChangeAngle();		//角度変更処理
-	void InputKey();		//キー入力
-	void MoveBall();		//ボールの移動処理
-	void GameInit();		//ゲーム初期化処理
 
-	int KeyFlg;
-	int MenuNumber;
-
+public:
 
 public:
 	int Cr = (0xffffff);

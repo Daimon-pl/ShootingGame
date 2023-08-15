@@ -6,6 +6,7 @@
 Help::Help()
 {
 	cimage = LoadGraph("images/Cimages/cimage.png");
+	PAD = LoadGraph("images/Help/PAD.png");
 }
 
 
@@ -28,6 +29,7 @@ AbstractScene* Help::Update()
 void Help::Draw() const
 {
 	DrawGraph(0, 0, cimage, TRUE);
+	DrawGraph(50, 50, PAD, TRUE);
 	SetFontSize(50);
 	DrawString(560, 330, "Help", Cr);
 	SetFontSize(20);

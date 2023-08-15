@@ -5,6 +5,7 @@ class Help : public AbstractScene
 {
 private:
 	int cimage;
+	int PAD;
 
 public:
 	int Cr = (0xffffff);
