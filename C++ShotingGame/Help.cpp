@@ -6,7 +6,7 @@
 Help::Help()
 {
 	cimage = LoadGraph("images/Cimages/cimage.png");
-	PAD = LoadGraph("images/Help/PAD.png");
+	PAD = LoadGraph("images/Help/PAD2.png");
 }
 
 
@@ -29,9 +29,7 @@ AbstractScene* Help::Update()
 void Help::Draw() const
 {
 	DrawGraph(0, 0, cimage, TRUE);
-	DrawGraph(50, 50, PAD, TRUE);
-	SetFontSize(50);
-	DrawString(560, 330, "Help", Cr);
+	DrawGraph(0, 100, PAD, TRUE);
 	SetFontSize(20);
 	DrawString(1080, 690, "Bƒ{ƒ^ƒ“‚Å–ß‚é", Cr);
 }

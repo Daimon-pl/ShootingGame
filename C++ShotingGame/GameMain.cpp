@@ -6,11 +6,7 @@
 GameMain::GameMain()
 {
 	cimage = LoadGraph("images/Cimages/cimage.png");
-	titlecursor = LoadGraph("images/Title/Target.png");
 
-	cursor_num = 0;
-	cursor_y = 0;
-	interval = 0;
 }
 
 
@@ -33,10 +29,6 @@ AbstractScene* GameMain::Update()
 void GameMain::Draw()const
 {	
 	DrawGraph(0, 0, cimage, TRUE);
-	DrawGraph(TITLEMODESELECT_X - 70, TITLEMODESELECT_Y - 20 + cursor_y, titlecursor, TRUE);
-
-	SetFontSize(50);
-	DrawString(200, 800, "•Ší‚ğ‘I‘ğ‚µ‚æ‚¤",Cr);
 	
 	SetFontSize(20);
 	DrawString(1080, 650, "Aƒ{ƒ^ƒ“‚ÅŒˆ’è",Cr);
