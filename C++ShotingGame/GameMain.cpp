@@ -5,7 +5,7 @@
 
 GameMain::GameMain()
 {
-	cimage = LoadGraph("images/Cimages/cimage.png");
+	//cimage = LoadGraph("images/Cimages/cimage.png");
 
 }
 
@@ -28,7 +28,7 @@ AbstractScene* GameMain::Update()
 
 void GameMain::Draw()const
 {	
-	DrawGraph(0, 0, cimage, TRUE);
+	//DrawGraph(0, 0, cimage, TRUE);
 	
 	SetFontSize(20);
 	DrawString(1080, 650, "Aƒ{ƒ^ƒ“‚ÅŒˆ’è",Cr);
