@@ -23,12 +23,31 @@ AbstractScene* GameMain::Update()
 		return new Title();
 	}
 
+	cursor_y = cursor_num * 96;
+	if (interval < 70) {
+		interval++;
+	}
+
+
+	if ((PAD_INPUT::GetLStick().ThumbY > MARGIN || CheckHitKey(KEY_INPUT_W)) && interval >= 70) {
+		cursor_num--;
+		interval = 0;
+	}
+	else if ((PAD_INPUT::GetLStick().ThumbY < -MARGIN || CheckHitKey(KEY_INPUT_S)) && interval >= 70) {
+		cursor_num++;
+		interval = 0;
+	}
+
 	return this;
 }
 
 void GameMain::Draw()const
 {	
 	//DrawGraph(0, 0, cimage, TRUE);
+
+
+	DrawString(640, 340, "œ", Cr);
+	//DrawFormatString(470, 0, 0x00FFFF, "x %d y%d", mx, my);//À•W
 	
 	SetFontSize(20);
 	DrawString(1080, 650, "Aƒ{ƒ^ƒ“‚ÅŒˆ’è",Cr);
