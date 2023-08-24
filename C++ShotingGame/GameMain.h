@@ -11,6 +11,10 @@ private:
 	int interval;
 
 
+	int Key;
+	int mx = 640, my = 340;
+
+
 public:
 
 public:

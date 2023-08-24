@@ -22,6 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	SetGraphMode(1280, 720, 32);	//画面サイズの設定
 
 	if (DxLib_Init() == -1) return -1;	// DXライブラリの初期化処理
+	
 
 	SetDrawScreen(DX_SCREEN_BACK);	// 描画先画面を裏にする
 
@@ -52,6 +53,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		ClearDrawScreen();		// 画面の初期化
 		PAD_INPUT::UpdateKey();
 		sceneMng->Draw();
+
 
 		//強制終了
 		if (CheckHitKey(KEY_INPUT_ESCAPE))
