@@ -3,6 +3,7 @@
 #include "SceneManager.h"
 #include "Title.h"
 #include "PadInput.h"
+#include "Stage.h"
 
 
 #define FRAMERATE 60.0 //フレームレート
@@ -30,7 +31,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	try
 	{
-		sceneMng = new SceneManager((AbstractScene*)new Title());
+		sceneMng = new SceneManager((AbstractScene*)new Stage());
 	}
 	catch (const char* err)
 	{
